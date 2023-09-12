@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
       initialRoute: 'login',
       //en esta parte podemos controlar a que ventana ir al iniciar la aplicacion
       routes: {'login': (_) => LoginScreen(), 'home': (_) => HomeScreen()},
+      theme:
+          //definimos el color gris de fondo
+          ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.grey[300]),
     );
   }
 }
