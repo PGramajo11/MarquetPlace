@@ -14,7 +14,7 @@ class AuthBackground extends StatelessWidget {
       height: double.infinity,
       child: Stack(
         children: [
-          _CajaAzul(), //en esta parte mandamos a llamar a
+          _CajaAzul(), //en esta parte mandamos a llamar a el formulario
           _IconoUsuario(),
           this.child,
         ],

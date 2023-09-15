@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marketplace_app/widgets/widgets.dart';
+import 'package:marketplace_app/UI/decoracion_entrada.dart';
 
 //creamos la pantalla del login
 class LoginScreen extends StatelessWidget {
@@ -25,6 +26,7 @@ class LoginScreen extends StatelessWidget {
           //boton de crear nueva cuenta
           SizedBox(height: 50),
           Text('Crear una cuenta'),
+          SizedBox(height: 40),
         ],
       ))),
     );
@@ -41,22 +43,41 @@ class _Formulario extends StatelessWidget {
           child: Column(
         children: [
           TextFormField(
+            //creamos la peticion para llamar a la caja de texto del correo
             autocorrect: false,
             keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blue),
-                ),
-                focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 2)),
-                hintText: 'pedronavaja@miumg.edu.gt',
+            decoration: InputDecorations.authInputDecoration(
+                hinText: 'pedronavaja@gmail.com',
                 labelText: 'Email',
-                labelStyle: TextStyle(color: Colors.blue),
-                prefixIcon: Icon(
-                  Icons.alternate_email_sharp,
-                  color: Colors.blue,
-                )),
-          )
+                prefixIcon: Icons.alternate_email_rounded),
+          ),
+          SizedBox(height: 40), //separacion entre las cajas de texto
+          TextFormField(
+            autocorrect: false,
+            obscureText: true, //oculatamos letras
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecorations.authInputDecoration(
+                hinText: '********',
+                labelText: 'Contraseña',
+                prefixIcon: Icons.lock_clock_outlined),
+          ),
+
+          SizedBox(height: 40), //separacion entre las cajas de texto
+
+          MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              disabledColor: Colors.grey,
+              elevation: 0,
+              color: Colors.blue,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                child: Text(
+                  'Ingresar',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              onPressed: () {})
         ],
       )),
     );
